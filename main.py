@@ -28,15 +28,14 @@ def process_video():
 
     try:
         # Process video: add audio, crop to 9:16 (center), trim to audio length
-        video_stream = ffmpeg.input(video_path)
-        audio_stream = ffmpeg.input(audio_path)
+        video_stream = ffmpeg.input(video_path)['v']
+        audio_stream = ffmpeg.input(audio_path)['a']
         (
             ffmpeg
             .output(
                 video_stream,
                 audio_stream,
                 output_path,
-                map=['0:v', '1:0'],
                 shortest=None,
                 vf='crop=in_h*9/16:in_h'
             )
