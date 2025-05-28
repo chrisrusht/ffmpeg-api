@@ -53,5 +53,9 @@ def process_video():
             if os.path.exists(f):
                 os.remove(f)
 
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
 if __name__ == '__main__':
     app.run(debug=True, port=10000)
