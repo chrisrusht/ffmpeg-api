@@ -36,7 +36,7 @@ def process_video():
                 video_stream,
                 audio_stream,
                 output_path,
-                map=['0:v', '1:a'],
+                map=['0:v', '1:0'],
                 shortest=None,
                 vf='crop=in_h*9/16:in_h'
             )
